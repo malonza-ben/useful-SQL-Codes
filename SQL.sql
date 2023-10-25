@@ -14,3 +14,7 @@ You can use EXISTS in a subquery within the WHERE clause to filter rows based on
 SELECT CustomerName
 FROM Customers
 WHERE EXISTS (SELECT 1 FROM Orders WHERE Orders.CustomerID = Customers.CustomerID);
+
+SELECT EntStageName FROM entertainers JOIN Customers WHERE EXISTS ( SELECT 1 FROM entertainers WHERE CustomerID = ( SELECT CustomerID FROM Customers WHERE CustLastName = 'Bonnicksen' ) )
+
+
